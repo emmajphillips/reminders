@@ -1,10 +1,10 @@
-import React from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import Navbar from './components/common/Navbar'
-import Home from './components/common/Home'
-import TasksToday from './components/tasks/TasksToday'
-import TasksWeek from './components/tasks/TasksWeek'
+import Navbar from "./components/common/Navbar";
+import Home from "./components/common/Home";
+import TasksToday from "./components/tasks/TasksToday";
+import TasksWeek from "./components/tasks/TasksWeek";
 
 const App = () => {
   return (
@@ -16,7 +16,7 @@ const App = () => {
         <Route path="/tasks/week" component={TasksWeek} />
       </Switch>
     </BrowserRouter>
-  )
-}
+  );
+};
 
-export default App
+export default App;

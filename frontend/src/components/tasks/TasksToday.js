@@ -37,10 +37,14 @@ function TasksToday () {
 
   return (
     <>
+<<<<<<< HEAD
       <div className="header">
         <h1>Tasks</h1>
         <p>Today</p>
       </div>
+=======
+      <h1>Tasks</h1>
+>>>>>>> 655e4c3... Bump websocket-extensions from 0.1.3 to 0.1.4 in /frontend
       <PageContainer>
         {tasks.length === 0 ? 
           <h2> no tasks</h2>
@@ -61,8 +65,13 @@ function TasksToday () {
           </form>
         </div> 
           : 
+<<<<<<< HEAD
           null}
         <button type="button" onClick={openNewTaskForm} className="pink-button">{tasks.length === 0 ? 'add task' : 'create another'}</button>
+=======
+          <div></div>}
+        <button type="button" onClick={openNewTaskForm}>{tasks.length === 0 ? 'Add task' : 'create another'}</button>
+>>>>>>> 655e4c3... Bump websocket-extensions from 0.1.3 to 0.1.4 in /frontend
       </PageContainer>
     </>
   )
