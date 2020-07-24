@@ -22,11 +22,13 @@ function Home() {
   return (
     <section className="hero">
       <div className="container">
-        <h1 className="heading">What would you like to accomplish today?</h1>
-        <form onSubmit={handleSubmit}>
-          <input type="text" name="newTask" placeholder="" value={searchQuery} onChange={handleChange} />
-          <button type="submit">Add</button>
-        </form>
+        <div className="form">
+          <h1 className="heading">What would you like to accomplish today?</h1>
+          <form onSubmit={handleSubmit} className={searchQuery ? 'active' : null}>
+            <input type="text" name="newTask" placeholder="" value={searchQuery} onChange={handleChange} />
+            <button type="submit" className={searchQuery ? 'active' : null}>add</button>
+          </form>
+        </div>
         <Link to="tasks/today">Go to my tasks page</Link>
       </div>
     </section>
