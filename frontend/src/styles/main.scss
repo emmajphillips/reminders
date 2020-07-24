@@ -10,6 +10,7 @@ html {
 section.hero {
   min-height: 100vh;
   height: 100%;
+  background-color: #d5e8eb;
   div.container {
     display: flex;
     flex-direction: column;
@@ -38,6 +39,7 @@ section.hero {
         }
         input {
           padding-left: 0.5em;
+          background-color: inherit;
           border: none;
           font-family: "Times New Roman", Times, serif;
           font-size: 1.25rem;
@@ -45,27 +47,30 @@ section.hero {
             outline: none;
           }
         }
-        button {
+        button.active {
           margin-bottom: 0.25em;
           padding: 5px 15px;
-          background-color: #efefef;
-          border: 1px solid #efefef;
-          border-radius: 16px;
+          background-color: #a8fac6;
+          border-top: 4px solid #eff7ea;
+          border-right: 4px solid #36f365;
+          border-bottom: 4px solid #36f365;
+          border-left: 4px solid #95f0f7;
+          font-weight: 600;
+          border-radius: 6px;
           font-family: "Times New Roman", Times, serif;
           font-size: 1em;
-          color: #777;
-        }
-        button.active {
-          background-color: #ffaacc;
-          border: 1px solid #000;
-          font-weight: 600;
           color: #000;
+          transition: 0.1s ease-out;
+        }
+        button.hidden {
+          visibility: hidden;
+          transition: 0.1s linear;
         }
       }
-      // form.active {
-      //   border: none;
-      //   border-bottom: 3px solid #ff88dd;
-      // }
+      form.active {
+        border: none;
+        border-bottom: 3px solid #444;
+      }
     }
     a {
       margin: 1.5rem 0;
@@ -75,7 +80,6 @@ section.hero {
       border-right: 4px solid #ff88dd;
       border-bottom: 4px solid #ff88dd;
       border-left: 4px solid #ffaa77;
-      box-shadow: 0 2px 2px #d8d7d7, 2px 0 2px #d8d7d7, 0 -2px 2px #fff, -2px 0 2px #fff;
       border-radius: 6px;
       text-decoration: none;
       font-weight: 600;
