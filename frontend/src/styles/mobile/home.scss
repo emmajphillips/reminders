@@ -1,0 +1,81 @@
+// * Home component
+section.hero {
+  min-height: 100vh;
+  height: 100%;
+  background-color: #d5e8eb;
+  div.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    height: calc(100vh - 7em);
+    padding: 3.5em 0;
+    text-align: center;
+    div.form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      h1.heading {
+        font-size: 2rem;
+        margin: 0 0.5em;
+        padding: 3rem 0 1rem;
+      }
+      form {
+        display: flex;
+        margin: 2rem 0.5rem;
+        padding: 0.5em 0 0.25em;
+        border: none;
+        border-bottom: 3px solid #acacac;
+        &:hover {
+          border-bottom: 3px solid #444;
+        }
+        input {
+          padding-left: 0.5em;
+          background-color: inherit;
+          border: none;
+          font-family: "Times New Roman", Times, serif;
+          font-size: 1.25rem;
+          &:focus {
+            outline: none;
+          }
+        }
+        button.active {
+          margin-bottom: 0.25em;
+          padding: 5px 15px;
+          background-color: #a8fac6;
+          border-top: 4px solid #e3f8d6;
+          border-right: 4px solid #36f365;
+          border-bottom: 4px solid #36f365;
+          border-left: 4px solid #95f0f7;
+          font-weight: 600;
+          border-radius: 6px;
+          font-family: "Times New Roman", Times, serif;
+          font-size: 1em;
+          color: #000;
+          transition: 0.1s ease-out;
+        }
+        button.hidden {
+          visibility: hidden;
+          transition: 0.1s linear;
+        }
+      }
+      form.active {
+        border: none;
+        border-bottom: 3px solid #444;
+      }
+    }
+    a {
+      margin: 1.5rem 0;
+      padding: 0.5em;
+      background-color: #ffaacc;
+      border-top: 4px solid #ffeecc;
+      border-right: 4px solid #ff88dd;
+      border-bottom: 4px solid #ff88dd;
+      border-left: 4px solid #ffaa77;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      color: #000;
+    }
+  }
+}
