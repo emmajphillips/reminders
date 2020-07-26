@@ -1,32 +1,44 @@
 import React from 'react'
 import { Link, useHistory } from 'react-router-dom'
 
+
 function Home() {
-
+  
   const history = useHistory()
-
-  const [searchQuery, setSearchQuery] = React.useState('')
-
-
+  
+  const [newTask, setNewTask] = React.useState('')
+  
+  
   const handleChange = event => {
-    const updatedQuery = event.target.value
-    setSearchQuery(updatedQuery)
+    const taskToAdd = event.target.value
+    setNewTask(taskToAdd)
   }
-
+  
   const handleSubmit = event => {
-    if (!searchQuery) return
     event.preventDefault()
+    if (!newTask) return
+    homePageTasks.push(newTask)
+    localStorage.setItem('tasks', JSON.stringify(homePageTasks))
+    setNewTask('')
     history.push('/tasks/today')
   }
-
+  
   return (
     <section className="hero">
       <div className="container">
         <div className="form">
           <h1 className="heading">What would you like to accomplish today?</h1>
-          <form onSubmit={handleSubmit} className={searchQuery ? 'active' : null}>
-            <input type="text" name="newTask" placeholder="Start typing..." value={searchQuery} onChange={handleChange} />
-            <button type="submit" className={searchQuery ? 'active' : 'hidden'}>add</button>
+          <form 
+            onSubmit={handleSubmit} 
+            className={newTask ? 'active' : null}>
+            <input 
+              type="text" 
+              name="newTask" 
+              placeholder="Start typing..." 
+              value={newTask} 
+              onChange={handleChange} 
+            />
+            <button type="submit" className={newTask ? 'active' : 'hidden'}>add</button>
           </form>
         </div>
         <Link to="tasks/today">Go to my tasks page</Link>
@@ -36,3 +48,5 @@ function Home() {
 }
 
 export default Home
+
+export const homePageTasks = []
