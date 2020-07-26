@@ -1,0 +1,20 @@
+// * Navbar
+nav {
+  height: 2.25em;
+  background-color: #d5e8eb;
+  ul {
+    display: none;
+  }
+  span {
+    display: block;
+    width: 33px;
+    height: 3px;
+    margin-bottom: 6px;
+    position: relative;
+    top: 10px;
+    left: 88%;
+
+    background: #000;
+    border-radius: 5px;
+  }
+}

@@ -16,8 +16,7 @@ function TasksToday () {
       <PageContainer>
         {tasks.map(task => (
           <div key={task.id} className="task">
-            <input type="checkbox" />
-            <span className="checkbox" onClick={handleCheck}></span>
+            <input type="checkbox" className="checkbox" onClick={handleCheck}/>
             <h2>{task.name}</h2>
           </div>
         ))}

@@ -3,36 +3,8 @@ section.section {
   justify-content: center;
   min-height: calc(100vh - 41px);
   height: 100%;
-  div.container {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    margin: 0.5rem;
-  }
-  div.task {
-    display: flex;
-    align-items: center;
-    margin: 0.5em 0;
-    padding: 1.5em 0.5em;
-    border: 1px solid #000;
-    input {
-      position: absolute;
-      opacity: 0;
-      cursor: pointer;
-      height: 0;
-      width: 0;
-    }
-    .checkbox {
-      position: relative;
-      top: 0;
-      left: 0;
-      height: 25px;
-      width: 25px;
-      margin: 10px;
-      background-color: #FFF;
-      border: 1px solid #000;
-    }
-  }
 }
 
-@import "./home.scss";
+@import "./common/navbar.scss";
+@import "./common/home.scss";
+@import "./tasks/today.scss";
