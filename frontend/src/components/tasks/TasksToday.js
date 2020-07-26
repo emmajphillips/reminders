@@ -2,7 +2,10 @@ import React from 'react'
 
 import PageContainer from '../common/PageContainer'
 
-import { tasks } from '../../lib/tasks'
+// import { tasks } from '../../lib/tasks'
+
+const JSONtasks = localStorage.getItem('tasks')
+const realTasks = JSON.parse(JSONtasks)
 
 function TasksToday () {
 
@@ -14,12 +17,16 @@ function TasksToday () {
     <>
       <h1>Tasks</h1>
       <PageContainer>
-        {tasks.map(task => (
-          <div key={task.id} className="task">
-            <input type="checkbox" className="checkbox" onClick={handleCheck}/>
-            <h2>{task.name}</h2>
-          </div>
-        ))}
+        {!realTasks ? 
+          <h2> no tasks</h2>
+          :
+          realTasks.map(task => (
+            <div key={task.index} className="task">
+              <input type="checkbox" className="checkbox" onClick={handleCheck}/>
+              <h2>{task}</h2>
+            </div>
+          ))}
+        <button>Create another</button>
       </PageContainer>
     </>
   )

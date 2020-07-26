@@ -1,6 +1,8 @@
 import React from 'react'
 import { Link, useHistory } from 'react-router-dom'
 
+const tasks = []
+
 function Home() {
 
   const history = useHistory()
@@ -14,9 +16,13 @@ function Home() {
   }
 
   const handleSubmit = event => {
-    if (!searchQuery) return
     event.preventDefault()
+    if (!searchQuery) return
+    tasks.push(searchQuery)
+    localStorage.setItem('tasks', JSON.stringify(tasks))
+    console.log(searchQuery, 'added to', tasks)
     history.push('/tasks/today')
+    setSearchQuery('')
   }
 
   return (
