@@ -1,0 +1,28 @@
+section.section {
+  div.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0.5rem;
+  }
+  div.task {
+    display: flex;
+    align-items: center;
+    margin: 0.5em 0;
+    padding: 1.5em 0.5em;
+    border: 1px solid #000;
+    input.checkbox {
+      position: relative;
+      height: 25px;
+      width: 25px;
+      margin: 10px;
+      background-color: #fff;
+      border: 1px solid #000;
+      cursor: pointer;
+    }
+    h2 {
+      margin: 0 0.5em;
+      text-transform: lowercase;
+    }
+  }
+}
