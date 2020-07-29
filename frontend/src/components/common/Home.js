@@ -7,22 +7,21 @@ function Home() {
 
   const history = useHistory()
 
-  const [searchQuery, setSearchQuery] = React.useState('')
+  const [newTask, setNewTask] = React.useState('')
 
 
   const handleChange = event => {
-    const updatedQuery = event.target.value
-    setSearchQuery(updatedQuery)
+    const taskToAdd = event.target.value
+    setNewTask(taskToAdd)
   }
 
   const handleSubmit = event => {
     event.preventDefault()
-    if (!searchQuery) return
-    tasks.push(searchQuery)
+    if (!newTask) return
+    tasks.push(newTask)
     localStorage.setItem('tasks', JSON.stringify(tasks))
-    console.log(searchQuery, 'added to', tasks)
     history.push('/tasks/today')
-    setSearchQuery('')
+    setNewTask('')
   }
 
   return (
@@ -30,9 +29,17 @@ function Home() {
       <div className="container">
         <div className="form">
           <h1 className="heading">What would you like to accomplish today?</h1>
-          <form onSubmit={handleSubmit} className={searchQuery ? 'active' : null}>
-            <input type="text" name="newTask" placeholder="Start typing..." value={searchQuery} onChange={handleChange} />
-            <button type="submit" className={searchQuery ? 'active' : 'hidden'}>add</button>
+          <form 
+            onSubmit={handleSubmit} 
+            className={newTask ? 'active' : null}>
+            <input 
+              type="text" 
+              name="newTask" 
+              placeholder="Start typing..." 
+              value={newTask} 
+              onChange={handleChange} 
+            />
+            <button type="submit" className={newTask ? 'active' : 'hidden'}>add</button>
           </form>
         </div>
         <Link to="tasks/today">Go to my tasks page</Link>
