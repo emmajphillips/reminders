@@ -1,15 +1,20 @@
 import React from 'react'
 
 import PageContainer from '../common/PageContainer'
+import { homePageTasks } from '../common/Home'
 
 const JSONtasks = localStorage.getItem('tasks')
 const realTasks = JSON.parse(JSONtasks)
 
+console.log(homePageTasks)
+console.log(realTasks)
+
 function TasksToday () {
 
-  const [tasks, setTasks] = React.useState(realTasks)
+  const [tasks, setTasks] = React.useState(realTasks ? realTasks : homePageTasks)
   const [addTask, setAddTask] = React.useState(false)
   const [newTask, setNewTask] = React.useState('')
+
 
   const handleCheck = () => {
     console.log('clicked!')
@@ -27,8 +32,8 @@ function TasksToday () {
   const handleSubmit = event => {
     event.preventDefault()
     if (!newTask) return
-    localStorage.setItem('tasks', JSON.stringify([...tasks, newTask]))
     setTasks([...tasks, newTask])
+    localStorage.setItem('tasks', JSON.stringify([...tasks, newTask]))
     setNewTask('')
     setAddTask(false)
   }
@@ -57,7 +62,7 @@ function TasksToday () {
         </div> 
           : 
           <div></div>}
-        <button type="button" onClick={openNewTaskForm}>Create another</button>
+        <button type="button" onClick={openNewTaskForm}>{tasks.length === 0 ? 'Add task' : 'create another'}</button>
       </PageContainer>
     </>
   )

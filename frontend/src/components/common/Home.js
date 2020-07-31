@@ -1,29 +1,28 @@
 import React from 'react'
 import { Link, useHistory } from 'react-router-dom'
 
-const tasks = []
 
 function Home() {
-
+  
   const history = useHistory()
-
+  
   const [newTask, setNewTask] = React.useState('')
-
-
+  
+  
   const handleChange = event => {
     const taskToAdd = event.target.value
     setNewTask(taskToAdd)
   }
-
+  
   const handleSubmit = event => {
     event.preventDefault()
     if (!newTask) return
-    tasks.push(newTask)
-    localStorage.setItem('tasks', JSON.stringify(tasks))
-    history.push('/tasks/today')
+    homePageTasks.push(newTask)
+    localStorage.setItem('tasks', JSON.stringify(homePageTasks))
     setNewTask('')
+    history.push('/tasks/today')
   }
-
+  
   return (
     <section className="hero">
       <div className="container">
@@ -49,3 +48,5 @@ function Home() {
 }
 
 export default Home
+
+export const homePageTasks = []
