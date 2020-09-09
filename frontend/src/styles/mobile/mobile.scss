@@ -5,6 +5,11 @@ section.section {
   height: 100%;
 }
 
+div.header {
+  background-color: #d5e8eb;
+  padding: 0.5em 1em;
+}
+
 @import "./common/navbar.scss";
 @import "./common/home.scss";
 @import "./tasks/today.scss";

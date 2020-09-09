@@ -6,9 +6,6 @@ import { homePageTasks } from '../common/Home'
 const JSONtasks = localStorage.getItem('tasks')
 const realTasks = JSON.parse(JSONtasks)
 
-console.log(homePageTasks)
-console.log(realTasks)
-
 function TasksToday () {
 
   const [tasks, setTasks] = React.useState(realTasks ? realTasks : homePageTasks)
@@ -40,7 +37,9 @@ function TasksToday () {
 
   return (
     <>
-      <h1>Tasks</h1>
+      <div className="header">
+        <h1>Tasks</h1>
+      </div>
       <PageContainer>
         {tasks.length === 0 ? 
           <h2> no tasks</h2>
@@ -61,8 +60,8 @@ function TasksToday () {
           </form>
         </div> 
           : 
-          <div></div>}
-        <button type="button" onClick={openNewTaskForm}>{tasks.length === 0 ? 'Add task' : 'create another'}</button>
+          null}
+        <button type="button" onClick={openNewTaskForm} className="pink-button">{tasks.length === 0 ? 'add task' : 'create another'}</button>
       </PageContainer>
     </>
   )

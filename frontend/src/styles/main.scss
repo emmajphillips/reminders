@@ -7,4 +7,20 @@ html {
   font-size: 18px;
 }
 
+button.pink-button {
+  margin: 1.5rem 0;
+  padding: 0.5em;
+  background-color: #ffaacc;
+  border-top: 4px solid #ffeecc;
+  border-right: 4px solid #ff88dd;
+  border-bottom: 4px solid #ff88dd;
+  border-left: 4px solid #ffaa77;
+  border-radius: 6px;
+  text-decoration: none;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1em;
+  font-weight: 600;
+  color: #000;
+}
+
 @import '../styles/mobile/mobile.scss'
