@@ -39,6 +39,7 @@ function TasksToday () {
     <>
       <div className="header">
         <h1>Tasks</h1>
+        <p>Today</p>
       </div>
       <PageContainer>
         {tasks.length === 0 ? 
